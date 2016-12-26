@@ -270,284 +270,6 @@ It is also the high-end model of the MacBook family and is currently produced wi
 
 ';
 	
-	const DEFAULT_CATEGORIES = 'Action Figures
-All Action Figures
-Accessories
-Animals
-Collectibles
-Military Figures
-Playsets
-Police, Fire & Rescue Figures
-Political Figures
-Robots
-Science Fiction & Fantasy Figures
-Sports Figures
-Statues, Maquettes & Busts
-Activities & Amusements
-All Activities & Amusements
-Bath Toys
-Bubbles
-Drawing Tablet Toys
-Finger Puppets
-Finger Toys
-Flying Toys
-Fortunetelling Toys
-Gags & Practical Jokes
-Glow in the Dark Toys
-Inflatable Toys
-Juggling Sets
-Light-Up Toys
-Magnets
-Miniatures & Keychains
-Nesting Dolls
-Noisemakers
-Novelty Games
-Popping & Jumping Toys
-Prisms & Kaleidoscopes
-Slime & Putty Toys
-Spinning Tops
-Spring & Wind-up Toys
-Temporary Tattoos
-Toy Balls
-Viewfinders
-Water Toys
-Yo-yos
-Arts & Crafts
-All Arts & Crafts
-Aprons & Smocks
-Art Supply Sets & Kits
-Beads & Jewelry
-Chalk & Chalkboards
-Clay, Dough & Pottery
-Craft Kits
-Crayons
-Drawing & Sketch Pads
-Drawing & Sketching Tablets
-Dry Erase Markers & Boards
-Easels
-Glue, Paste & Tape
-Paintbrushes
-Paints
-Paper
-Pencils & Erasers
-Pens & Markers
-Scissors
-Sharpeners
-Stamps & Stickers
-Bikes, Skates & Ride-Ons
-All Bikes, Skates & Ride-Ons
-Bikes
-Skates
-Skateboards
-Scooters
-Ride-On Toys
-Safety Equipment
-Construction, Blocks & Models
-All Construction, Blocks & Models
-Blocks
-Building Sets
-Construction & Models
-Dolls
-All Dolls
-Accessories
-Baby Dolls
-Dollhouses
-Ethnic Dolls
-Fashion Dolls
-Interactive Dolls
-Playsets
-Porcelain Dolls
-Rag Dolls
-Toddler Dolls
-Electronics for Kids
-All Electronics for Kids
-Alarm Clocks
-Arcade Games
-Audio & Video Players
-Cameras
-Electronic Pets
-Handheld Games
-Learning & Education
-Lighting & Light Makers
-Organizers & PDA\'s
-Personal Video Players & Accessories
-Play Laptops & Notebooks
-Plug & Play Video Games
-RC Figures & Robots
-Safes & Security Devices
-Spy Gadgets
-TVs
-Telephones
-Virtual Reality
-Walkie Talkies
-Watches
-Games
-All Games
-Accessories
-Action & Reflex Games
-Backyard Games
-Battling Tops
-Board Games
-Card Games
-Casino Games
-Checkers, Chess & Backgammon
-Classic Games
-DVD Games
-Dice & Marble Games
-Dominoes & Tile Games
-Educational Games
-Electronic
-Floor Games
-Foreign Language Games
-Game Room Games
-Hasbro Games
-Mystery Games
-Religious Games
-Sports Games
-Stacking Games
-Travel Games
-TV Games
-Variety Game Sets
-Hobbies
-All Hobbies
-Coin Collecting
-Die-Cast
-Hobby Tools
-Models
-Radio Control
-Rockets
-Science
-Sports Trading Cards
-Trains
-Kids\' Furniture & Room Décor
-All Kids\' Furniture & Room Décor
-Activity & Sensory Tables
-Bedroom Furniture
-Chairs & Sofas
-Desks
-Outdoor Furniture
-Room Décor
-Step Stools
-Tables
-Tents & Tunnels
-Toy Chests & Storage
-Learning & Exploration
-All Learning & Exploration
-Early Development Toys
-Electronic Learning
-Foreign Languages
-Geography & Globes
-History
-Math & Counting
-Reading & Writing
-Science
-Music
-All Music
-Dance Mats
-Karaoke
-Musical Instruments
-Radio & CD Players
-Party Supplies
-All Party Supplies
-Cake Supplies
-Decorations
-Favors
-Hats
-Invitations & Cards
-Party Games & Crafts
-Party Packs
-Piñatas
-Tableware
-Play Vehicles
-All Play Vehicles
-Boats
-Buses
-Cars & Playsets
-Construction & Farm Vehicles
-Emergency Vehicles
-Military Vehicles
-Motorcycles
-Planes & Helicopters
-Radio & Remote Control
-Spacecraft
-Trains & Railway Sets
-Trucks & SUV\'s
-Vehicle Playsets
-Wood Vehicles
-Preschool
-All Preschool
-Baby Toys
-Toddler Toys
-Pre-Kindergarten Toys
-Pretend Play & Dress-up
-All Pretend Play & Dress-up
-Beauty & Fashion
-Costumes
-Pretend Electronics
-Puppets & Puppet Theaters
-Sets
-Spy Gear
-Puzzles
-All Puzzles
-Brain Teasers
-Floor Puzzles
-Foam Puzzles
-Jigsaw Puzzles
-Storage & Accessories
-Travel Puzzles
-Wood Puzzles
-Sports & Outdoor Play
-All Sports & Outdoor Play
-Ball Pits & Accessories
-Baseball & Softball
-Basketball
-Boxing
-Fishing Combo\'s & Accessories
-Fitness Equipment
-Football
-Golf
-Gymnastics
-Hockey
-Kites & Wind Spinners
-Lawn Games
-Outdoor Furniture
-Play Tents & Tunnels
-Playhouses
-Pogo Sticks & Hoppers
-Pools & Water Fun
-Sandbox & Beach
-Skateboarding
-Slumber Bags
-Snow Sports
-Soccer
-Swings, Gym Sets & Slides
-Tennis
-Toy Sports
-Trampolines & Inflatable Bouncers
-Volleyball
-Stuffed Animals & Toys
-All Stuffed Animals & Toys
-Animals
-Backpacks & Accessories
-Interactive
-More Stuffed Toys
-Movie & TV
-Plush Puppets
-Teddy Bears
-Toy Figures & Playsets
-All Toy Figures & Playsets
-Animals
-Bendable Figures
-Bobble Head Figures
-Construction
-Fantasy & Adventure
-Figure Accessories
-Military & Rescue
-Miniature Figures
-Movie & TV
-Playsets
-Vehicles';
-
 	/**
 	 * Initialize hooks.
 	 */
@@ -889,7 +611,6 @@ Vehicles';
 	private function add_category( $post_id ){
 		
 		$cats = array(
-			array('Sporting Goods' => 'Sporting Goods'),
 			array('Sporting Goods' => 'Athletics'),
 			array('Sporting Goods' => 'Exercise & Fitness'),
 			array('Sporting Goods' => 'Indoor Games'),
@@ -899,7 +620,9 @@ Vehicles';
 			array('Toys & Games' => 'Outdoor Play Equipment'),
 			array('Toys & Games' => 'Puzzles'),
 			array('Toys & Games' => 'Toys'),
-			array('Toys & Games' => 'Toys & Games')
+			array('Arts & Entertainment' => 'Event Tickets'),
+			array('Arts & Entertainment' => 'Hobbies & Creative Arts'),
+			array('Arts & Entertainment' => 'Party & Celebration'),
 			);
 		
 		// Get a random category
@@ -912,15 +635,23 @@ Vehicles';
 		$parent_term = key($terms);
 		$term = $terms[ key($terms) ];
 		
+		
 		// check if parent term exists
 		$parent_cat = term_exists($parent_term, 'product_cat');
-		if ($parent_cat !== 0 && $category !== null) {
+		if ($parent_cat !== 0 && $parent_cat !== null) {
 			// parent cat exists
 			// Get cat id
-			$parent_cat_id = get_cat_ID( $parent_cat );
+			//echo '1.a Parent Term "'.$parent_term.'" bestaat al. <br />';
+			$parent_cat_id = get_cat_ID( $parent_term );
 		}else{
-			// create parent cat and return cat id
-			$parent_cat_id = wp_create_category( $parent_term);
+			// create new parent cat and return cat id
+			//$parent_cat_id = wp_create_category( $parent_term );
+			//echo '1.a Parent Term "'.$parent_term.'" bestaat nog niet. <br />';
+			
+			$id = wp_insert_term( $parent_term, 'product_cat' );
+			$parent_cat_id = $id['term_id'];
+			
+			//echo '1.b post id '.$parent_term.' toegevoegd aan categorieën met id '.$parent_cat_id.' <br />';
 		}
 
 		// 
@@ -928,19 +659,28 @@ Vehicles';
 		if ($category !== 0 && $category !== null) {
 		  // term does exists
 		  // add post to the $category
-		  wp_set_object_terms( $post_id, $category, 'product_cat', true );
+		  //echo '2.a Term "'.$term.'" bestaat al. <br />';
+		  wp_set_object_terms( $post_id, $term, 'product_cat', true );
+		  
+		  //echo '2.b post id '.$post_id.' toegevoegd aan '.$term.'. <br />';
 		  
 		}else{
 			
 			// term does not exists
 			// create parent and child term
-			wp_insert_term( $category, 'product_cat', array('parent'=> $parent_cat_id) )
+			//echo '2.a Term "'.$term.'" bestaat nog niet. <br />';
+			wp_insert_term( $term, 'product_cat', array('parent'=> $parent_cat_id) );
+			
+			//echo '2.b Term "'.$term.'" met parent "'.$parent_term.'" aangemaakt. <br />';
 			
 			// koppel het product aan de category
-			 wp_set_object_terms( $post_id, $category, 'product_cat', true );
+			 wp_set_object_terms( $post_id, $term, 'product_cat', true );
+			  	
+			 //echo '2.c post id '.$post_id.' toegevoegd aan '.$term.'. <br />';
 			
 		}
 		
+				
 	}
 
 	/**
@@ -990,18 +730,8 @@ Vehicles';
 			update_post_meta( $post_id, '_price', $price );
 			update_post_meta( $post_id, '_regular_price', $price );
 
-			// add random categories
-			/*
-			$terms = array();
-			$cats = explode( "\n", self::DEFAULT_CATEGORIES );
-			$c_n = count( $cats );
-			$c_max = rand( 1, 3 );
-			for ( $i = 0; $i < $c_max ; $i++ ) {
-				$terms[] = $cats[rand( 0, $c_n - 1 )];
-			}
-			wp_set_object_terms( $post_id, $terms, 'product_cat', true );
-			*/
-			$this->add_category( $post_id );
+			// add random categories including parent categories
+			self::add_category( $post_id );
 			
 
 			// add tags

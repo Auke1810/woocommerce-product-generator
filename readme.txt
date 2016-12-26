@@ -1,10 +1,10 @@
 === WooCommerce Product Generator ===
-Contributors: itthinx
+Contributors: itthinx, AukeJomm
 Donate link: http://www.itthinx.com/plugins/woocommerce-product-generator/
 Tags: automatic, benchmark, example, generator, performance, product, products, sample, test, tester, testing, test-tool, woocommerce
 Requires at least: 4.0
 Tested up to: 4.4.2
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv3
 
 A sample product generator for WooCommerce.
@@ -39,6 +39,10 @@ You can install the plugin via FTP, see [Manual Plugin Installation](http://code
 5. Some sample products generated.
 
 == Changelog ==
+
+= 1.1.2 =
+* Changed the categories to an array of categories and used lesser categories and Google taxonomies.
+* Categories have parents and child
 
 = 1.1.1 =
 * Fixed the excerpt creation and avoiding duplicate lines in it.
