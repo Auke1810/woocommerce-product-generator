@@ -21,14 +21,14 @@
  * Plugin Name: WooCommerce Product Generator
  * Plugin URI: http://www.itthinx.com/
  * Description: A sample product generator for WooCommerce.
- * Version: 1.1.1
- * Author: itthinx
- * Author URI: http://www.itthinx.com
+ * Version: 1.1.2
+ * Author: itthinx, AukeJomm
+ * Author URI: http://www.itthinx.com, http://www.wordpressassist.nl
  * Donate-Link: http://www.itthinx.com
  * License: GPLv3
  */
 
-define( 'WOOPROGEN_PLUGIN_VERSION', '1.1.1' );
+define( 'WOOPROGEN_PLUGIN_VERSION', '1.1.2' );
 define( 'WOOPROGEN_PLUGIN_DOMAIN', 'woocommerce-product-generator' );
 define( 'WOOPROGEN_PLUGIN_URL', WP_PLUGIN_URL . '/woocommerce-product-generator' );
 
@@ -881,6 +881,67 @@ Vehicles';
 			}
 		}
 	}
+	
+	/**
+	 * This function does creates hierarchical Taxonomy
+	 *
+	 */
+	private function add_category( $post_id ){
+		
+		$cats = array(
+			array('Sporting Goods' => 'Sporting Goods'),
+			array('Sporting Goods' => 'Athletics'),
+			array('Sporting Goods' => 'Exercise & Fitness'),
+			array('Sporting Goods' => 'Indoor Games'),
+			array('Sporting Goods' => 'Outdoor Recreation'),
+			array('Toys & Games' => 'Game Timers'),
+			array('Toys & Games' => 'Games'),
+			array('Toys & Games' => 'Outdoor Play Equipment'),
+			array('Toys & Games' => 'Puzzles'),
+			array('Toys & Games' => 'Toys'),
+			array('Toys & Games' => 'Toys & Games')
+			);
+		
+		// Get a random category
+		$c_n = count( $cats );
+		$c_max = rand( 1, 3 );
+		for ( $i = 0; $i < $c_max ; $i++ ) {
+			$terms = $cats[rand( 0, $c_n - 1 )];
+		}
+		
+		$parent_term = key($terms);
+		$term = $terms[ key($terms) ];
+		
+		// check if parent term exists
+		$parent_cat = term_exists($parent_term, 'product_cat');
+		if ($parent_cat !== 0 && $category !== null) {
+			// parent cat exists
+			// Get cat id
+			$parent_cat_id = get_cat_ID( $parent_cat );
+		}else{
+			// create parent cat and return cat id
+			$parent_cat_id = wp_create_category( $parent_term);
+		}
+
+		// 
+		$category = term_exists($term, 'product_cat');
+		if ($category !== 0 && $category !== null) {
+		  // term does exists
+		  // add post to the $category
+		  wp_set_object_terms( $post_id, $category, 'product_cat', true );
+		  
+		}else{
+			
+			// term does not exists
+			// create parent and child term
+			wp_insert_term( $category, 'product_cat', array('parent'=> $parent_cat_id) )
+			
+			// koppel het product aan de category
+			 wp_set_object_terms( $post_id, $category, 'product_cat', true );
+			
+		}
+		
+	}
 
 	/**
 	 * Returns the total number of published products.
@@ -929,7 +990,8 @@ Vehicles';
 			update_post_meta( $post_id, '_price', $price );
 			update_post_meta( $post_id, '_regular_price', $price );
 
-			// add categories
+			// add random categories
+			/*
 			$terms = array();
 			$cats = explode( "\n", self::DEFAULT_CATEGORIES );
 			$c_n = count( $cats );
@@ -938,6 +1000,9 @@ Vehicles';
 				$terms[] = $cats[rand( 0, $c_n - 1 )];
 			}
 			wp_set_object_terms( $post_id, $terms, 'product_cat', true );
+			*/
+			$this->add_category( $post_id );
+			
 
 			// add tags
 			$tags = explode( " ", $title );
